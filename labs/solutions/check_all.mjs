@@ -59,7 +59,7 @@ for (const t of teams) {
   eq(t.team + ' one_request_share', r1(100 * sum(u.map((r) => r.one_request_sessions)) / ses), k.one_request_share);
   eq(t.team + ' long_share', r1(100 * sum(u.map((r) => r.long_sessions)) / ses), k.long_share);
   eq(t.team + ' blocked_per_10', r1(10 * sum(n.map((r) => r.blocked_public_ai)) / 4 / t.headcount), k.blocked_per_10_staff_week);
-  eq(t.team + ' access_denied', sum(net.filter((r) => r.team === t.team).map((r) => r.mirqat_access_denied)), k.access_denied_12_weeks);
+  eq(t.team + ' access_denied', sum(net.filter((r) => r.team === t.team).map((r) => r.miwan_access_denied)), k.access_denied_12_weeks);
   eq(t.team + ' weekly_or_daily', r1(100 * (S('use_freq', 'weekly') + S('use_freq', 'daily')) / R), k.weekly_or_daily);
   eq(t.team + ' unapproved_yes', r1(100 * S('unapproved_tool', 'yes') / R), k.unapproved_yes);
   eq(t.team + ' rule_not_clear', r1(100 * (S('rule_clear', 'unsure') + S('rule_clear', 'no')) / R), k.rule_not_clear);

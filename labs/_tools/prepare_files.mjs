@@ -43,7 +43,7 @@ function csv(header, rows) {
   return '﻿' +[header.join(','), ...rows.map((r) => header.map((h) => esc(r[h])).join(','))].join('\n') + '\n';
 }
 
-// ---------- 1. Weekly use of Mirqat, from its admin console (aggregates per team) ----------
+// ---------- 1. Weekly use of Miwan, from its admin console (aggregates per team) ----------
 const ACTIVE = {
   SUP: (w) => Math.round(120 * (0.35 + 0.37 * (w - 1) / 11)) + randint(-2, 2),
   STU: (w) => Math.round(60 * (0.10 + 0.10 * (w - 1) / 11)) + randint(-1, 1),
@@ -68,13 +68,13 @@ for (const w of WEEKS) for (const t of TEAMS) {
     classification_warnings: randint(...WARN[t.id]), data_class: PUBLIC });
 }
 
-// ---------- 2. Network: blocked attempts at unapproved public AI sites; Mirqat access denied ----------
+// ---------- 2. Network: blocked attempts at unapproved public AI sites; Miwan access denied ----------
 const BLOCK = { SUP: [8, 14], STU: [28, 42], HRS: [2, 4], FIN: [1, 3], PLN: [0, 2], BEN: [2, 5] };
 const HRS_DENIED = [44, 38, 30, 24, 19, 15, 12, 10, 8, 7, 6, 6];
 const network = [];
 for (const w of WEEKS) for (const t of TEAMS) {
   network.push({ week: w, team: t.id, blocked_public_ai: randint(...BLOCK[t.id]),
-    mirqat_access_denied: t.id === 'HRS' ? HRS_DENIED[w - 1] : randint(0, t.id === 'PLN' ? 1 : 2), data_class: PUBLIC });
+    miwan_access_denied: t.id === 'HRS' ? HRS_DENIED[w - 1] : randint(0, t.id === 'PLN' ? 1 : 2), data_class: PUBLIC });
 }
 
 // ---------- 3. Pulse survey, week 10, anonymous: counts per team, question and answer ----------
@@ -114,11 +114,11 @@ for (const t of TEAMS) {
 
 // ---------- 4. Help-desk tickets, cleaned summaries (no names, no case details) ----------
 const TEXT = {
-  access: ['رابط «مِرقاة» لا يفتح من أجهزة الإدارة', 'رسالة رفض اتصال عند فتح «مِرقاة» من شبكة الطابق الثالث', 'يعمل «مِرقاة» من الجوال ولا يعمل من جهاز المكتب', 'طلب فتح الوصول إلى «مِرقاة» لأجهزة الفريق'],
-  account: ['الحساب لم يُفعَّل بعد الدورة التعريفية', 'كلمة المرور الموحدة لا تقبل في «مِرقاة»'],
-  data_rule: ['هل يُسمح بلصق قائمة أسماء الطلاب لترتيبها؟', 'هل يجوز إدخال أي شيء مالي في «مِرقاة» أم لا شيء أبدًا؟', 'هل يُسمح بإدخال نص تعميم منشور على الموقع؟', 'ما المسموح إدخاله في «مِرقاة» من أعمال المشتريات؟', 'هل تدخل جداول الحضور المجمّعة دون أسماء؟', 'الأداة تعرض تحذير تصنيف عند لصق نص: ماذا أفعل؟'],
-  how_to: ['كيف أجعل «مِرقاة» يلخص تقرير زيارة طويلًا؟', 'كيف أطلب جدولًا بدل فقرة؟', 'هل يوجد أمثلة لاستعمال «مِرقاة» في عمل المشرفين؟', 'كيف أرفع ملفًّا وأسأل عنه؟', 'كيف أحفظ طلبًا أكرره كل أسبوع؟'],
-  wrong_output: ['«مِرقاة» ذكر رقم تعميم غير موجود', 'الملخص أسقط شرطًا من اللائحة المنشورة', 'الترجمة غيّرت معنى جملة في الإعلان'],
+  access: ['رابط «مِعوان» لا يفتح من أجهزة الإدارة', 'رسالة رفض اتصال عند فتح «مِعوان» من شبكة الطابق الثالث', 'يعمل «مِعوان» من الجوال ولا يعمل من جهاز المكتب', 'طلب فتح الوصول إلى «مِعوان» لأجهزة الفريق'],
+  account: ['الحساب لم يُفعَّل بعد الدورة التعريفية', 'كلمة المرور الموحدة لا تقبل في «مِعوان»'],
+  data_rule: ['هل يُسمح بلصق قائمة أسماء الطلاب لترتيبها؟', 'هل يجوز إدخال أي شيء مالي في «مِعوان» أم لا شيء أبدًا؟', 'هل يُسمح بإدخال نص تعميم منشور على الموقع؟', 'ما المسموح إدخاله في «مِعوان» من أعمال المشتريات؟', 'هل تدخل جداول الحضور المجمّعة دون أسماء؟', 'الأداة تعرض تحذير تصنيف عند لصق نص: ماذا أفعل؟'],
+  how_to: ['كيف أجعل «مِعوان» يلخص تقرير زيارة طويلًا؟', 'كيف أطلب جدولًا بدل فقرة؟', 'هل يوجد أمثلة لاستعمال «مِعوان» في عمل المشرفين؟', 'كيف أرفع ملفًّا وأسأل عنه؟', 'كيف أحفظ طلبًا أكرره كل أسبوع؟'],
+  wrong_output: ['«مِعوان» ذكر رقم تعميم غير موجود', 'الملخص أسقط شرطًا من اللائحة المنشورة', 'الترجمة غيّرت معنى جملة في الإعلان'],
   file_upload: ['رفع ملف جدول بيانات كبير يفشل', 'الملف المرفوع لا يُقرأ إن كان صورة ممسوحة']
 };
 const TICKETS = {
@@ -196,7 +196,7 @@ for (const t of TEAMS) {
     warnings_per_100_sessions: r1(100 * u.reduce((a, r) => a + r.classification_warnings, 0) / ses),
     blocked_public_ai_per_week: r1(mean(n.map((r) => r.blocked_public_ai))),
     blocked_per_10_staff_week: r1(10 * mean(n.map((r) => r.blocked_public_ai)) / t.head),
-    access_denied_12_weeks: nAll.reduce((a, r) => a + r.mirqat_access_denied, 0),
+    access_denied_12_weeks: nAll.reduce((a, r) => a + r.miwan_access_denied, 0),
     respondents: R, response_rate: r1(100 * R / t.head),
     weekly_or_daily: r1(100 * (s.use_freq.weekly + s.use_freq.daily) / R),
     unapproved_yes: r1(100 * s.unapproved_tool.yes / R),
@@ -241,7 +241,7 @@ for (const t of TEAMS) {
 // ---------- write or check ----------
 const files = {
   'files/usage_weekly.csv': csv(['week', 'team', 'headcount', 'active_users', 'sessions', 'one_request_sessions', 'long_sessions', 'file_uploads', 'classification_warnings', 'data_class'], usage),
-  'files/network_weekly.csv': csv(['week', 'team', 'blocked_public_ai', 'mirqat_access_denied', 'data_class'], network),
+  'files/network_weekly.csv': csv(['week', 'team', 'blocked_public_ai', 'miwan_access_denied', 'data_class'], network),
   'files/survey_pulse_counts.csv': csv(['team', 'question', 'answer', 'count', 'data_class'], survey),
   'files/helpdesk_tickets.csv': csv(['ticket_id', 'week', 'team', 'category', 'summary', 'data_class'], tickets),
   'files/skill_check.csv': csv(['team', 'mode', 'takers', 'passed', 'data_class'], skill),

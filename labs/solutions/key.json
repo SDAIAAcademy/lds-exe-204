@@ -1,0 +1,417 @@
+{
+  "seed": 2042027,
+  "teams": {
+    "SUP": {
+      "ar": "الإشراف التربوي",
+      "headcount": 120
+    },
+    "STU": {
+      "ar": "شؤون الطلاب",
+      "headcount": 60
+    },
+    "HRS": {
+      "ar": "الموارد البشرية",
+      "headcount": 45
+    },
+    "FIN": {
+      "ar": "الشؤون المالية والمشتريات",
+      "headcount": 50
+    },
+    "PLN": {
+      "ar": "التخطيط والمعلومات",
+      "headcount": 30
+    },
+    "BEN": {
+      "ar": "خدمات المستفيدين والاتصال",
+      "headcount": 40
+    }
+  },
+  "lab_1_1": {
+    "SUP": {
+      "active_share": 67.3,
+      "sessions_per_active": 5.9,
+      "one_request_share": 81.9,
+      "long_share": 4.1,
+      "warnings_per_100_sessions": 0.4,
+      "blocked_public_ai_per_week": 11.8,
+      "blocked_per_10_staff_week": 1,
+      "access_denied_12_weeks": 14,
+      "respondents": 84,
+      "response_rate": 70,
+      "weekly_or_daily": 75,
+      "unapproved_yes": 11.9,
+      "rule_not_clear": 29.8,
+      "checks_always": 14.3,
+      "manager_support_mean": 3.93,
+      "top_barrier": "no_examples",
+      "top_barrier_share": 33.3,
+      "self_time_61_plus": 59.5,
+      "tickets": {
+        "how_to": 14,
+        "wrong_output": 5,
+        "data_rule": 3
+      }
+    },
+    "STU": {
+      "active_share": 18.3,
+      "sessions_per_active": 2.1,
+      "one_request_share": 53.2,
+      "long_share": 8.5,
+      "warnings_per_100_sessions": 22.3,
+      "blocked_public_ai_per_week": 37.5,
+      "blocked_per_10_staff_week": 6.3,
+      "access_denied_12_weeks": 14,
+      "respondents": 41,
+      "response_rate": 68.3,
+      "weekly_or_daily": 24.4,
+      "unapproved_yes": 53.7,
+      "rule_not_clear": 65.9,
+      "checks_always": 9.8,
+      "manager_support_mean": 3.05,
+      "top_barrier": "tool_cannot_take_work",
+      "top_barrier_share": 43.9,
+      "self_time_61_plus": 14.6,
+      "tickets": {
+        "data_rule": 11,
+        "how_to": 3,
+        "wrong_output": 1
+      }
+    },
+    "HRS": {
+      "active_share": 2.2,
+      "sessions_per_active": 1,
+      "one_request_share": 25,
+      "long_share": 0,
+      "warnings_per_100_sessions": 0,
+      "blocked_public_ai_per_week": 3.5,
+      "blocked_per_10_staff_week": 0.8,
+      "access_denied_12_weeks": 219,
+      "respondents": 30,
+      "response_rate": 66.7,
+      "weekly_or_daily": 3.3,
+      "unapproved_yes": 6.7,
+      "rule_not_clear": 40,
+      "checks_always": 3.3,
+      "manager_support_mean": 4.1,
+      "top_barrier": "blocked_access",
+      "top_barrier_share": 70,
+      "self_time_61_plus": 0,
+      "tickets": {
+        "access": 16,
+        "account": 3
+      }
+    },
+    "FIN": {
+      "active_share": 6,
+      "sessions_per_active": 1.4,
+      "one_request_share": 58.8,
+      "long_share": 0,
+      "warnings_per_100_sessions": 0,
+      "blocked_public_ai_per_week": 1.3,
+      "blocked_per_10_staff_week": 0.3,
+      "access_denied_12_weeks": 10,
+      "respondents": 33,
+      "response_rate": 66,
+      "weekly_or_daily": 6.1,
+      "unapproved_yes": 6.1,
+      "rule_not_clear": 84.8,
+      "checks_always": 6.1,
+      "manager_support_mean": 1.85,
+      "top_barrier": "rule_unclear",
+      "top_barrier_share": 45.5,
+      "self_time_61_plus": 0,
+      "tickets": {
+        "data_rule": 9,
+        "how_to": 1
+      }
+    },
+    "PLN": {
+      "active_share": 79.2,
+      "sessions_per_active": 6.6,
+      "one_request_share": 22.8,
+      "long_share": 38.1,
+      "warnings_per_100_sessions": 0.2,
+      "blocked_public_ai_per_week": 0.5,
+      "blocked_per_10_staff_week": 0.2,
+      "access_denied_12_weeks": 5,
+      "respondents": 26,
+      "response_rate": 86.7,
+      "weekly_or_daily": 88.5,
+      "unapproved_yes": 3.8,
+      "rule_not_clear": 11.5,
+      "checks_always": 69.2,
+      "manager_support_mean": 4.42,
+      "top_barrier": "none",
+      "top_barrier_share": 57.7,
+      "self_time_61_plus": 69.2,
+      "tickets": {
+        "how_to": 2,
+        "file_upload": 4
+      }
+    },
+    "BEN": {
+      "active_share": 15,
+      "sessions_per_active": 14,
+      "one_request_share": 59.6,
+      "long_share": 8.9,
+      "warnings_per_100_sessions": 0.9,
+      "blocked_public_ai_per_week": 4,
+      "blocked_per_10_staff_week": 1,
+      "access_denied_12_weeks": 13,
+      "respondents": 27,
+      "response_rate": 67.5,
+      "weekly_or_daily": 22.2,
+      "unapproved_yes": 11.1,
+      "rule_not_clear": 44.4,
+      "checks_always": 14.8,
+      "manager_support_mean": 2.48,
+      "top_barrier": "no_time",
+      "top_barrier_share": 51.9,
+      "self_time_61_plus": 14.8,
+      "tickets": {
+        "how_to": 3,
+        "access": 1,
+        "data_rule": 2
+      }
+    },
+    "directorate_week12_active": 133,
+    "directorate_week12_share": 38.6,
+    "diagnosis": {
+      "SUP": {
+        "pattern": "shallow",
+        "barrier": "skill_and_examples"
+      },
+      "STU": {
+        "pattern": "unsafe",
+        "barrier": "tool_cannot_take_work"
+      },
+      "HRS": {
+        "pattern": "blocked",
+        "barrier": "technical_access"
+      },
+      "FIN": {
+        "pattern": "blocked",
+        "barrier": "rule_and_manager"
+      },
+      "PLN": {
+        "pattern": "deep_and_safe",
+        "barrier": "none"
+      },
+      "BEN": {
+        "pattern": "blocked",
+        "barrier": "time_and_manager"
+      }
+    }
+  },
+  "lab_2_1": {
+    "use_weekly_share": {
+      "SUP": [
+        34.2,
+        37.5,
+        40,
+        44.2,
+        49.2,
+        52.5,
+        55.8,
+        56.7,
+        61.7,
+        65.8,
+        70,
+        71.7
+      ],
+      "STU": [
+        10,
+        13.3,
+        11.7,
+        15,
+        13.3,
+        15,
+        15,
+        16.7,
+        16.7,
+        20,
+        18.3,
+        18.3
+      ],
+      "HRS": [
+        2.2,
+        2.2,
+        0,
+        2.2,
+        2.2,
+        2.2,
+        0,
+        2.2,
+        2.2,
+        2.2,
+        2.2,
+        2.2
+      ],
+      "FIN": [
+        4,
+        4,
+        6,
+        4,
+        6,
+        6,
+        4,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "PLN": [
+        43.3,
+        46.7,
+        50,
+        60,
+        60,
+        66.7,
+        66.7,
+        70,
+        73.3,
+        80,
+        76.7,
+        86.7
+      ],
+      "BEN": [
+        10,
+        12.5,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15
+      ]
+    },
+    "skill": {
+      "SUP": {
+        "ai_off": {
+          "takers": 52,
+          "pass_rate": 40.4
+        },
+        "ai_on": {
+          "takers": 52,
+          "pass_rate": 84.6
+        }
+      },
+      "STU": {
+        "ai_off": {
+          "takers": 30,
+          "pass_rate": 46.7
+        },
+        "ai_on": {
+          "takers": 18,
+          "pass_rate": 72.2
+        }
+      },
+      "HRS": {
+        "ai_off": {
+          "takers": 28,
+          "pass_rate": 60.7
+        },
+        "ai_on": {
+          "takers": "<5",
+          "pass_rate": "suppressed"
+        }
+      },
+      "FIN": {
+        "ai_off": {
+          "takers": 31,
+          "pass_rate": 58.1
+        },
+        "ai_on": {
+          "takers": "<5",
+          "pass_rate": "suppressed"
+        }
+      },
+      "PLN": {
+        "ai_off": {
+          "takers": 24,
+          "pass_rate": 79.2
+        },
+        "ai_on": {
+          "takers": 24,
+          "pass_rate": 91.7
+        }
+      },
+      "BEN": {
+        "ai_off": {
+          "takers": 22,
+          "pass_rate": 45.5
+        },
+        "ai_on": {
+          "takers": 6,
+          "pass_rate": 83.3
+        }
+      }
+    },
+    "value": {
+      "comparison": {
+        "teams": [
+          "HRS",
+          "FIN"
+        ],
+        "baseline_median": 50,
+        "recent_median": 44,
+        "change_pct": -12,
+        "quality_baseline": 82.5,
+        "quality_recent": 85
+      },
+      "SUP": {
+        "baseline_median": 40,
+        "recent_median": 32,
+        "change_pct": -20,
+        "vs_comparison_pts": -8,
+        "quality_baseline": 85,
+        "quality_recent": 60
+      },
+      "STU": {
+        "baseline_median": 36.5,
+        "recent_median": 33,
+        "change_pct": -9.6,
+        "vs_comparison_pts": 2.4,
+        "quality_baseline": 75,
+        "quality_recent": 75
+      },
+      "HRS": {
+        "baseline_median": 44,
+        "recent_median": 42.5,
+        "change_pct": -3.4,
+        "vs_comparison_pts": 8.6,
+        "quality_baseline": 80,
+        "quality_recent": 85
+      },
+      "FIN": {
+        "baseline_median": 54,
+        "recent_median": 44,
+        "change_pct": -18.5,
+        "vs_comparison_pts": -6.5,
+        "quality_baseline": 85,
+        "quality_recent": 85
+      },
+      "PLN": {
+        "baseline_median": 67,
+        "recent_median": 39,
+        "change_pct": -41.8,
+        "vs_comparison_pts": -29.8,
+        "quality_baseline": 90,
+        "quality_recent": 90
+      },
+      "BEN": {
+        "baseline_median": 32,
+        "recent_median": 31.5,
+        "change_pct": -1.6,
+        "vs_comparison_pts": 10.4,
+        "quality_baseline": 80,
+        "quality_recent": 80
+      }
+    }
+  }
+}

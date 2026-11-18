@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-ax="lab" data-track="executives">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>المختبر 1.1 · تشخيص ستة فرق · قيادة تبني الذكاء الاصطناعي والتغيير</title>
+<meta name="generator" content="SDAIA Academy engine 1.0.0">
+<link rel="icon" href="../_engine/icon.svg">
+<link rel="alternate" type="text/markdown" href="D1_1_diagnosis.md">
+<link rel="describedby" href="../llms.txt">
+<link rel="stylesheet" href="../_engine/academy.css">
+</head>
+<body>
+<header>
+<div class="wrap">
+<div class="top"><div class="logo"></div><nav><a href="../index.html">صفحة المقرر</a><a href="../slides/day1.html#lab-1-1">العودة إلى الشرائح</a></nav></div>
+<span class="tag">المختبر 1.1</span>
+<h1>تشخيص ستة فرق</h1>
+<p>بيانات «مِعوان» المجمّعة، والشبكة، واستبانة النبض، وتذاكر الدعم لستة فرق: جدول تشخيص بالنمط والعائق ودليلين من مصدرين.</p>
+<div class="meta"><span>60 دقيقة</span><span>اليوم 1</span><span>الجلسة 1: لماذا يتعثر التبني</span></div>
+</div>
+</header>
+<main class="wrap">
+<article class="lab" data-lab="1.1">
+  <div class="box goal">
+    <h3>ستخرج من هذا المختبر بـ</h3>
+    <ul>
+      <li>جدول تشخيص للفرق الستة في المكتب الرئيس: نمط الاستخدام في كل فريق، والعائق وراءه، ودليلان من مصدرين مختلفين. هذا دليل ناتج التعلم الأول.</li>
+      <li>ثلاثة أسطر للراعية د. هيلة الدهمشي: بأي فريقين يبدأ البرنامج، ولماذا.</li>
+    </ul>
+  </div>
+
+  <h2>ما تحتاجه</h2>
+  <div class="files">
+    <a href="files/usage_weekly.csv" download><b>usage_weekly.csv</b><span>استخدام «مِعوان» من لوحة إدارته، لكل فريق في كل أسبوع من 12: المستخدمون النشطون، والجلسات، والجلسات ذات الطلب الواحد، والجلسات الطويلة (ست رسائل أو أكثر)، والملفات المرفوعة، وتحذيرات التصنيف.</span></a>
+    <a href="files/network_weekly.csv" download><b>network_weekly.csv</b><span>من الأمن السيبراني، لكل فريق في كل أسبوع: محاولات الوصول إلى مواقع ذكاء اصطناعي عامة غير معتمدة حجبها مرشح الشبكة، ومرات رفض الوصول إلى «مِعوان».</span></a>
+    <a href="files/survey_pulse_counts.csv" download><b>survey_pulse_counts.csv</b><span>استبانة نبض مجهولة في الأسبوع العاشر: عدد المجيبين عن كل إجابة لكل سؤال في كل فريق.</span></a>
+    <a href="files/helpdesk_tickets.csv" download><b>helpdesk_tickets.csv</b><span>78 تذكرة لمكتب الدعم بملخصات منقّاة، بالفئة والأسبوع والفريق.</span></a>
+    <a href="files/teams.csv" download><b>teams.csv</b><span>رموز الفرق الستة وأسماؤها وعدد موظفيها.</span></a>
+  </div>
+  <p>جدول بيانات (LibreOffice Calc أو Microsoft Excel). <b>الذكاء الاصطناعي هنا مرشد:</b> اسأل المساعد عن طريقة الحساب أو المعادلة أو الجدول المحوري، واحسب أنت، واكتب التشخيص أنت.</p>
+
+  <h2>كيف يحسب الجميع</h2>
+  <table>
+    <tr><th>المقياس</th><th>طريقته</th></tr>
+    <tr><td>نسبة النشطين</td><td>متوسط <code>active_users</code> في الأسابيع 9 إلى 12 ÷ <code>headcount</code></td></tr>
+    <tr><td>الجلسات لكل نشط</td><td>مجموع <code>sessions</code> في الأسابيع 9 إلى 12 ÷ مجموع <code>active_users</code> فيها</td></tr>
+    <tr><td>نسبة الطلب الواحد</td><td>مجموع <code>one_request_sessions</code> ÷ مجموع <code>sessions</code>، في الأسابيع نفسها</td></tr>
+    <tr><td>المحاولات المحجوبة</td><td>متوسط <code>blocked_public_ai</code> الأسبوعي في الأسابيع 9 إلى 12، لكل 10 موظفين</td></tr>
+    <tr><td>نسب الاستبانة</td><td>عدد المجيبين عن الإجابة ÷ عدد المجيبين في الفريق (السطر <code>respondents</code>)</td></tr>
+  </table>
+
+  <h2>الخطوات</h2>
+
+  <div class="step">
+    <h3>1 · افتح الملفات وتحقق منها <span class="min">5 د</span></h3>
+    <p>تأكد أن عمود <code>data_class</code> «عام» في كل الملفات، وأن لا عمود فيها يحمل اسم موظف أو رقمه: الأرقام مجمّعة لكل فريق، والاستبانة أعداد لا إجابات أفراد. هذا ما يجعل عرضها على مساعد مرشد مسموحًا.</p>
+  </div>
+
+  <div class="step">
+    <h3>2 · ثلاثة مقاييس للاستخدام <span class="min">12 د</span></h3>
+    <p>من <code>usage_weekly.csv</code>: نسبة النشطين، والجلسات لكل نشط، ونسبة الطلب الواحد، لكل فريق. ثم انظر إلى الجلسات الطويلة وتحذيرات التصنيف لكل 100 جلسة.</p>
+    <div class="prompt" data-tool="مساعد مرشد">في جدول بيانات فيه الأعمدة week و team و active_users و sessions، كيف أحسب لكل فريق مجموع sessions في الأسابيع من 9 إلى 12 بمعادلة واحدة؟ اشرح المعادلة ولا تحسب عني.</div>
+  </div>
+
+  <div class="step">
+    <h3>3 · خمسة أرقام من الاستبانة <span class="min">12 د</span></h3>
+    <p>لكل فريق: نسبة من يستخدم أسبوعيًّا أو يوميًّا، ونسبة من أجاب «نعم» عن الأداة غير المعتمدة، ونسبة من لم تتضح له القاعدة («غير متأكد» و«لا»)، ومتوسط دعم المدير من 1 إلى 5، وأكثر العوائق ذكرًا. اقرأ أيضًا الوقت الموفَّر بحسب المجيبين: إنه تقدير ذاتي.</p>
+  </div>
+
+  <div class="step">
+    <h3>4 · التذاكر والمحاولات المحجوبة <span class="min">8 د</span></h3>
+    <p>عُدّ التذاكر لكل فريق بحسب <code>category</code>، واقرأ ملخصات فئتي <code>data_rule</code> و<code>access</code>. ثم احسب المحاولات المحجوبة لكل 10 موظفين، ومجموع رفض الوصول إلى «مِعوان» في 12 أسبوعًا.</p>
+  </div>
+
+  <div class="step">
+    <h3>5 · جدول التشخيص <span class="min">15 د</span></h3>
+    <p>لكل فريق سطر: النمط (سطحي، أو غير آمن، أو متعثر، أو عميق وآمن)، والعائق (المهارة والأمثلة، أو أداة لا تناسب العمل، أو الوصول التقني، أو القاعدة والمدير، أو الوقت والمدير)، ودليلان من مصدرين مختلفين، كل دليل رقم.</p>
+    <table>
+      <tr><th>الفريق</th><th>النمط والعائق</th><th>الدليلان</th></tr>
+      <tr><td>SUP</td><td class="fill"></td><td class="fill"></td></tr>
+      <tr><td>STU</td><td class="fill"></td><td class="fill"></td></tr>
+      <tr><td>HRS</td><td class="fill"></td><td class="fill"></td></tr>
+      <tr><td>FIN</td><td class="fill"></td><td class="fill"></td></tr>
+      <tr><td>PLN</td><td class="fill"></td><td class="fill"></td></tr>
+      <tr><td>BEN</td><td class="fill"></td><td class="fill"></td></tr>
+    </table>
+    <div class="callout warn"><b>دليل واحد لا يكفي.</b> رقم من لوحة الاستخدام وحدها يقول كم، ولا يقول لماذا. خذ الثاني من الاستبانة أو من التذاكر أو من الشبكة.</div>
+  </div>
+
+  <div class="step">
+    <h3>6 · ثلاثة أسطر للراعية <span class="min">8 د</span></h3>
+    <p>اختر فريقين يبدأ بهما البرنامج، واكتب لكل منهما العائق والإجراء الأول. لا يكون الإجراء أبدًا إدخال بيانات «مقيدة» في «مِعوان» ولا في غيره.</p>
+  </div>
+
+  <div class="step stretch">
+    <h3>✱ مهمة إضافية: عنوان من رقم واحد</h3>
+    <p>اكتب عنوانًا من رقم واحد للإدارة كلها كما تكتبه لوحة استخدام عادية (نسبة النشطين في الأسبوع 12)، ثم بيّن ما يخفيه عن الفرق الستة.</p>
+  </div>
+
+  <h2>أسئلة تحقق</h2>
+  <ol class="checks">
+    <li>أي فريق له أعلى عدد من الجلسات لكل نشط، ولماذا لا يعني ذلك أن الفريق كله يستخدم «مِعوان»؟</li>
+    <li>في أي فريق يقل استخدام «مِعوان» ويكثر الاستخدام خارجه؟ ومن أي ملفين عرفت ذلك؟</li>
+    <li>فريقان متعثران بعائقين مختلفين: ما الذي يفرق بينهما في البيانات؟</li>
+  </ol>
+
+  <details class="instructor">
+    <summary>للمدرّب</summary>
+    <ul>
+      <li>المرجع: <code>labs/solutions/D1_1_diagnosis.md</code>، والأرقام في <code>key.json</code> (القسم <code>lab_1_1</code>)، ويعيد <code>check_all.mjs</code> حسابها من الملفات.</li>
+      <li>SUP سطحي (67.3% نشطون، و81.9% طلب واحد، و14.3% يتحققون دائمًا، والعائق الأول «لا أمثلة» 33.3%). STU غير آمن (6.3 محاولات محجوبة لكل 10 موظفين أسبوعيًّا، و53.7% يستعملون أداة غير معتمدة، والعائق «الأداة لا تأخذ عملي» 43.9%). HRS متعثر تقنيًّا (219 رفض وصول، والعائق «الوصول محجوب» 70%، ودعم المدير 4.10). FIN متعثر بالقاعدة والمدير (84.8% القاعدة غير واضحة، ودعم المدير 1.85). PLN عميق وآمن (38.1% جلسات طويلة، و69.2% يتحققون دائمًا). BEN متعثر بالوقت والمدير (15% نشطون بـ14 جلسة لكل نشط، والعائق «لا وقت» 51.9%).</li>
+      <li>الفخاخ: قراءة أعلى جلسات لكل نشط (BEN) نجاحًا؛ وقراءة قلة الاستخدام في STU أمانًا؛ وجمع HRS وFIN في عائق واحد؛ واتخاذ الوقت الموفَّر بحسب المجيبين في SUP دليل قيمة.</li>
+      <li>العنوان العادي: 133 من 345 نشطون في الأسبوع 12 (38.6%). يخفي فريقًا شبه مغلق تقنيًّا، وفريقًا يعمل خارج الأداة المعتمدة، وفريقًا كثير النشاط قليل التحقق.</li>
+    </ul>
+  </details>
+</article>
+<nav class="pager"><span></span><a href="D1_2_literacy.html" rel="next">المختبر التالي ←</a></nav>
+</main>
+<footer><div class="wrap">أكاديمية سدايا · مسار التنفيذيين والقادة · قيادة تبني الذكاء الاصطناعي والتغيير<br><span class="muted">إصدار المقرر 2027.1.0 · المحرّك 1.0.0 · بُني في ⁦2026-11-18⁩ · الإيداع 744e982</span></div></footer>
+<script type="application/json" id="academy-data">{"v":1,"engine":"1.0.0","build":{"at":"2026-11-18T03:16:49Z","version":"2027.1.0","commit":"744e982"},"course":{"id":"lds-exe-204","code":"LDS-EXE-204","title":"قيادة تبني الذكاء الاصطناعي والتغيير","track":"executives","lang":"ar","dir":"rtl","url":"https://sdaiaacademy.github.io/lds-exe-204/","repo":"SDAIAAcademy/lds-exe-204","home":"../index.html"},"lab":{"id":"1.1","title":"تشخيص ستة فرق","summary":"بيانات «مِعوان» المجمّعة، والشبكة، واستبانة النبض، وتذاكر الدعم لستة فرق: جدول تشخيص بالنمط والعائق ودليلين من مصدرين.","minutes":60,"day":1,"unit":"اليوم 1","session":1,"deck":"../slides/day1.html#lab-1-1","prev":null,"next":"D1_2_literacy.html","alt":{}},"ai":{"context":{"course":"../context/course.md","courseJs":"../context/course.js","day":null,"llms":"../llms.txt"},"tasks":[],"tools":[]},"features":{},"strings":{}}</script>
+<script src="../_engine/academy.js"></script>
+</body>
+</html>
